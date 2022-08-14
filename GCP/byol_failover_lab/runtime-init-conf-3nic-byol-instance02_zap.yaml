@@ -54,7 +54,7 @@ extension_services:
           My_License:
             class: License
             licenseType: regKey
-            regKey: KSXBG-NTTWS-UMZPR-FFOMF-LPETYOM
+            regKey: xxx-xxx-xxx
           admin:
             class: User
             userType: regular
