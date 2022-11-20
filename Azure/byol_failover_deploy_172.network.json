@@ -126,7 +126,7 @@
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
-                        "[concat(parameters('vnetAddressPrefix'), '.0.0/20')]"
+                        "[concat(parameters('vnetAddressPrefix'), '.48.0/20')]"
                     ]
                 },
                 "subnets": "[variables('constructSubnetArray')]"
