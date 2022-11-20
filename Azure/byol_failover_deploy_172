@@ -78,7 +78,7 @@
       "type": "string"
     },
     "bigIpPeerAddr": {
-      "defaultValue": "172.17.1.11",
+      "defaultValue": "172.16.1.11",
       "metadata": {
         "description": "Provide the static address of the remote peer used for clustering. In this failover solution, clustering is initiated from the second instance (02) to the first instance (01) so you would provide the first instances Self IP address."
       },
@@ -130,49 +130,49 @@
       "type": "string"
     },
     "bigIpExternalSelfIp01": {
-      "defaultValue": "172.17.1.11",
+      "defaultValue": "172.16.1.11",
       "metadata": {
         "description": "External Private IP Address for BIGIP Instance 01. IP address parameter must be in the form x.x.x.x."
       },
       "type": "string"
     },
     "bigIpExternalSelfIp02": {
-      "defaultValue": "172.17.1.12",
+      "defaultValue": "172.16.1.12",
       "metadata": {
         "description": "External Private IP Address for BIGIP Instance 02. IP address parameter must be in the form x.x.x.x."
       },
       "type": "string"
     },
     "bigIpExternalVip01": {
-      "defaultValue": "172.17.1.101",
+      "defaultValue": "172.16.1.101",
       "metadata": {
         "description": "External private VIP Address for BIGIP Instance. IP address parameter must be in the form x.x.x.x. The address must reside in the same subnet and address space as the IP address provided for bigIpExternalSelfIp01."
       },
       "type": "string"
     },
     "bigIpInternalSelfIp01": {
-      "defaultValue": "172.17.2.11",
+      "defaultValue": "172.16.2.11",
       "metadata": {
         "description": "Internal Private IP Address for BIGIP Instance 01. IP address parameter must be in the form x.x.x.x."
       },
       "type": "string"
     },
     "bigIpInternalSelfIp02": {
-      "defaultValue": "172.17.2.12",
+      "defaultValue": "172.16.2.12",
       "metadata": {
         "description": "Internal Private IP Address for BIGIP Instance 02. IP address parameter must be in the form x.x.x.x."
       },
       "type": "string"
     },
     "bigIpMgmtAddress01": {
-      "defaultValue": "172.17.0.11",
+      "defaultValue": "172.16.0.11",
       "metadata": {
         "description": "Management Private IP Address for BIGIP Instance 01. IP address parameter must be in the form x.x.x.x."
       },
       "type": "string"
     },
     "bigIpMgmtAddress02": {
-      "defaultValue": "172.17.0.12",
+      "defaultValue": "172.16.0.12",
       "metadata": {
         "description": "Management Private IP Address for BIGIP Instance 02. IP address parameter must be in the form x.x.x.x."
       },
@@ -247,7 +247,7 @@
     "adminUsername": "[string('azureuser')]",
     "numSubnets": "[if(parameters('provisionExampleApp'), 4, 3)]",
     "vnetName": "[concat(variables('uniqueString'), '-vnet')]",
-    "vnetAddressPrefix": "172.17",
+    "vnetAddressPrefix": "172.16.",
     "solutionType": "failover",
     "createManagedIdentity": "[empty(parameters('bigIpUserAssignManagedIdentity'))]",
     "customAssignableScopes": [],
@@ -291,7 +291,7 @@
           "80",
           "443"
         ],
-        "sourceAddressPrefix": "172.17.0.0/20",
+        "sourceAddressPrefix": "172.16.48.0/20",
         "protocol": "Tcp"
       }
     ],
@@ -309,7 +309,7 @@
           "80",
           "443"
         ],
-        "sourceAddressPrefix": "172.17.0.0/20",
+        "sourceAddressPrefix": "172.16.48.0/20",
         "protocol": "Tcp"
       }
     ],
