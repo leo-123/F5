@@ -247,7 +247,7 @@
     "adminUsername": "[string('azureuser')]",
     "numSubnets": "[if(parameters('provisionExampleApp'), 4, 3)]",
     "vnetName": "[concat(variables('uniqueString'), '-vnet')]",
-    "vnetAddressPrefix": "172.16.",
+    "vnetAddressPrefix": "172.17",
     "solutionType": "failover",
     "createManagedIdentity": "[empty(parameters('bigIpUserAssignManagedIdentity'))]",
     "customAssignableScopes": [],
